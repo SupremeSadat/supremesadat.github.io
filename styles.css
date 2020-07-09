@@ -1,0 +1,442 @@
+:root {
+    --pseudoNavHeight:58px;
+    --pseudoBottomBarHeight:41px;
+    --pseudoTabHeight:28px;
+
+    --pseudoSideBarWidth:23px;
+    --NavWidth:250px;
+
+    --pseudoNavTopHeight:29px;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#bbbbbb;
+    background-color:#3c3d41;
+}
+#pseudoNav{
+    color: white;
+    height:var(--pseudoNavHeight);
+    width: 100vw;
+    
+}
+    
+#pseudoNavTop{
+    display: flex;
+    height: var(--pseudoNavTopHeight);
+    border-bottom: 1px solid #333333;
+}
+
+#pseudoSettings {
+    color: #bbbbbb;
+    display: flex;
+    list-style: none;
+    
+    margin-left: 23px;
+    width:500px;
+}
+
+#pseudoSettings u {
+    font-size: 12px;
+}
+
+#pseudoSettings li {
+    text-decoration: none;
+    margin-left:12.5px;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+#topRight{
+    position: fixed;
+    right:0px;
+    display: flex;
+}
+.topRight{
+    height: var(--pseudoNavTopHeight);
+    width: 48px;
+    
+}
+
+#exit{
+    opacity: 0.4;
+}
+#exit:hover{
+    background-color: red;
+    opacity: 1;
+}
+#exit::before, #exit::after {
+    position: fixed;
+    top:calc(var(--pseudoNavTopHeight)*0.5);
+    right:17px;
+    background-color: #ffffff;
+    content: '';
+    height: 1.5px;
+    width: 13px;
+    
+    
+}
+#exit::before{
+    transform: rotate(45deg);
+}
+#exit::after{
+    transform: rotate(-45deg);
+}
+
+#full::before{
+    position: fixed;
+    top:10px;
+    right:67px;
+    width:8px;
+    height: 8px;
+    border:1.5px solid #ffffff;
+    content: "";
+    opacity: 0.4;
+}
+#full:hover{
+    opacity: 1;
+    background-color: #cfcfcf2d;
+}
+
+#mini::before{
+    position: fixed;
+    top:15px;
+    right:114px;
+    width:8px;
+    height: 0px;
+    border:1px solid #ffffff;
+    content: "";
+    opacity: 0.4;
+}
+
+#mini:hover{
+    opacity: 1;
+    background-color: #cfcfcf2d;
+}
+
+#pseudoNavBottom{
+    border-color: purple;
+    border-top: 1px solid #515252;
+    border-bottom:1px solid black;
+    height: calc(var(--pseudoNavHeight) - var(--pseudoNavTopHeight))
+    
+}
+
+#pseudoNavBottom h1{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 6px;
+    font-weight: 620;
+    font-size: 12px;
+}
+#pseudoNavBottom h2{
+    background-color: #3c3c3c;
+    font-family: 'Courier New', Courier, monospace;
+    color: #636464;
+    position: absolute;
+    margin-left: 88px;
+    margin-top: 7px;
+    font-weight: 400;
+    transform: scale(0.6,2);
+}
+#nextName{
+    position: fixed;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+.docLogo{
+    width: 15px;
+    
+}
+
+#toprightlogo{
+    position: fixed;
+    right:12px;
+    width:350px
+}
+
+
+#pseudoTab{
+    
+    height:var(--pseudoTabHeight);
+    width: calc(100vw - var(var(--pseudoSideBarWidth)));
+    margin-left: var(--pseudoSideBarWidth);
+}
+
+#topNav{
+    position: fixed;
+    width: var(--NavWidth);
+    height: var(--pseudoTabHeight);
+    
+    
+}
+
+#project{
+    width:80px;
+    margin-left: 10px;
+}
+#fileSet{
+    width:110px;
+    position: absolute;
+    right:0px;
+}
+
+#pseudoSidebar{
+    position: fixed;
+    border-right: 1px solid black;
+    height: calc(100vh - var(--pseudoNavHeight) - var(--pseudoBottomBarHeight));
+    width: var(--pseudoSideBarWidth);
+    top: var(--pseudoNavHeight);
+    writing-mode: sideways-lr;
+    text-orientation: upright;
+    
+    
+}
+
+#sideBarImg{
+    position: absolute;
+    top: 0px;
+    height: 238px;
+    width: var(--pseudoSideBarWidth - 1px);
+}
+#favorite{
+    height: 89px;
+    margin-bottom: 8px;
+    margin-left: 2px;
+}
+
+#pseudoBottomBar{
+    position: fixed;
+    border-top:0.5px solid rgba(0, 0, 0, 0.801);
+  
+    height:var(--pseudoBottomBarHeight);
+    width:100vw;
+    bottom:0px;
+}
+#gitBar{
+    position: absolute;
+    width: 310px;
+    left: 26px;
+    top: 1px;
+}
+
+#eventLogo{
+    position: absolute;
+    right:24px;
+    width:68px;
+
+}
+#bottomleftlogo{
+    position: absolute;
+    bottom: 0px;
+    left:3px;
+    width:17px;
+}
+#bottomBotBar{
+    height: calc(0.5 * var(--pseudoBottomBarHeight));
+    position: absolute;
+    width:100vw;
+    bottom:0px;
+    border-top:1px solid rgba(109, 109, 109, 0.281);
+}
+#bottomRight{
+    position: absolute;
+    right:8px;
+    width:315px;
+}
+
+#navbar{
+    position: absolute;
+    border:1px solid rgba(146, 146, 146, 0.192);
+    
+    height:calc(100vh - var(--pseudoNavHeight) - var(--pseudoTabHeight) - var(--pseudoBottomBarHeight));
+    width:var(--NavWidth);
+    margin-left: var(--pseudoSideBarWidth);
+    
+    
+
+}
+
+#navTop{
+    position: relative;
+    margin-top: 2px;
+    margin-left: 20px;
+    list-style: none;
+    display: flex;
+    font-weight: 700;
+}
+#navTop::before{
+    position: relative;
+    content:"\25B6";
+    margin-top: 0px;
+    padding-top:0px ;
+    padding-right: 20px;
+    margin-right: 5px;
+    font-size: 11px;
+    background: url("images/file\ logo.bmp")
+    no-repeat 0 0;
+    background-size: 16px;
+    background-position: 15px 0px;
+}
+
+#currentTab{
+    display: flex;
+    position: absolute;
+    left:calc(var(--pseudoSideBarWidth) + var(--NavWidth));
+    z-index: 10;
+    width:auto;
+    padding-right: 25px;
+    height: var(--pseudoTabHeight);
+    background-color: #4d5154;
+    border-bottom: 2px solid #5386bd;
+}
+
+#currentTab:hover{
+    background-color: #343537;
+}
+#currentTab>h1{
+    margin-left: 30px;
+    margin-top: 5px;
+    background-color: inherit;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+
+#closeTab{
+    /* border: 1px solid red; */
+    align-items: center;
+    text-align: center;
+    background-color: inherit;
+    border-radius: 50%;
+    width:13px;
+    height: 13px;
+    position: absolute;
+    right:5px;
+    margin-top: 7px;
+    
+}
+
+#closeTab:hover{
+    background-color: #5b6064;
+}
+
+#closeTab:hover #x:before{
+    background-color: #343537;
+}
+#closeTab:hover #x:after{
+    background-color: #343537;
+}
+
+
+#x{
+    background-color: transparent;
+    
+    
+}
+#x:before, #x:after{
+    position: absolute;
+    content: '';
+    top:2px;
+    left:6px;
+    background-color: #696e71;
+    height: 9px;
+    width: 2px;
+}
+
+#x:before{
+    transform: rotate(-45deg);
+}
+
+#x:after{
+    transform: rotate(45deg);
+}
+
+#currentTab>img{
+    position: absolute;
+    background-color: inherit;
+    width: 16px;
+    top:3px;
+    left:10px;
+    
+}
+
+
+main{
+    position: relative;
+    border:1px solid rgba(201, 201, 201, 0.11);
+    width:calc(100vw - var(--pseudoSideBarWidth) - var(--NavWidth));
+    height:calc(100vh - var(--pseudoNavHeight) - var(--pseudoTabHeight) - var(--pseudoBottomBarHeight));
+    left:calc(var(--pseudoSideBarWidth) + var(--NavWidth));
+    overflow: scroll;
+}
+
+
+main,.tabs,p,.tabs>h1,.tabs>h2,.tabs>h3{
+    background-color:#2b2b2b;
+    font-family: 'Ubuntu Mono', monospace;   
+}
+.tabs>h1{
+    font-size: xx-large;
+    color:orange
+}
+.tabs>h2{
+    font-size: large;
+    color: lightgrey;
+    font-style: italic;
+}
+.tabs>h3{
+    color: green;
+    font-weight:900;
+}
+.tabs{
+    margin: 10px 10px 10px 60px;
+    text-align: justify;
+}
+
+.container{
+    width: auto;
+    padding-left: 50px;
+}
+.container::before{
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    margin-right: 5px;
+    content: "";
+    background: url(images/python\ logo.bmp) no-repeat 0 0;
+    background-size: 15px;
+    background-position: 0px 3px;
+    
+}
+#TabOptions{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    position:fixed;
+    opacity: 0;
+}
+input[type="radio"]:checked + label{
+    background-color: rgba(25, 0, 255, 0.164);
+    
+    
+}
+#mainside{
+    position: fixed;
+    width: 50px;
+    background-color: #343636;
+    border-right:1.5px solid rgb(77, 75, 75);
+    height: 100%;
+}
+
+
+#Education, #Projects, #Contact{
+    display: none;
+}
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadat Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="pseudoNav">
+        <div id="pseudoNavTop">
+            <ul id="pseudoSettings">
+                <li><u>F</u>ile</li>
+                <li><u>E</u>dit</li>
+                <li><u>V</u>iew</li>
+                <li><u>N</u>avigate</li>
+                <li><u>C</u>ode</li>
+                <li><u>R</u>efactor</li>
+                <li>R<u>u</u>n</li>
+                <li><u>T</u>ools</li>
+                <li>VC<u>S</u></li>
+                <li><u>W</u>indow</li>
+                <li><u>H</u>elp</li>
+            </ul>
+            <div id=topRight>
+                <div id="mini" class='topRight'></div>
+                <div id="full" class='topRight'></div>
+                <div id="exit" class='topRight'></div>
+            </div>
+        </div>
+        <div id="pseudoNavBottom">
+            <h1>Sadat Tafader</h1>
+            <h2>></h2>
+            <img src="images/python logo.bmp" alt="" class="docLogo" id="nextName">
+            <img src="images/python top right.bmp" alt="" id="toprightlogo">
+            <div id="pseudoNavBotRight"></div>
+        </div>
+
+    </div>
+
+
+    <div id="pseudoTab">
+        <div id='topNav'>
+            <img src="images/project selector.bmp" alt="" id="project">
+            <img src="images/file settings.bmp" alt="" id="fileSet">
+        </div>
+        <div id="currentTab">
+            <img src="images/python logo.bmp" alt="">
+            <h1 id="currentTabName">Main</h1>
+            <div id="closeTab"><h6 id="x"></h6></div>
+        </div>
+    </div>
+
+
+
+    <div id="pseudoSidebar">
+
+        <img src="images/side bar.bmp" alt="" id="sideBarImg">
+        <img src="images/sidebar favorite.bmp" alt="" id="favorite">
+    </div>
+    <nav id="navbar">
+
+        <h1 id="navTop">Sadat Tafader</h1>
+        <div id="TabOptions">
+            <input id="maintab" type="radio" name="tab" onclick="openTab('Main')" class="buttons" checked> <label
+                for="maintab" class="container">Main</label>
+            <input id="edutab" type="radio" name="tab" onclick="openTab('Education')" class="buttons"><label
+                for="edutab" class="container">Education</label>
+            <input id="protab" type="radio" name="tab" onclick="openTab('Projects')" class="buttons"><label for="protab"
+                class="container">Projects</label>
+            <input id="conttab" type="radio" name="tab" onclick="openTab('Contact')" class="buttons"><label
+                for="conttab" class="container">Contact</label>
+        </div>
+    </nav>
+    <main>
+        <div id="mainside"></div>
+        <div class="tabs" id="Main" onclick="openTab('Main')">
+            <h1>Sadat Tafader</h1>
+            <h2>About Me</h2>
+            <p>Graduated Majoring in Chemistry and Physics at the University of Bath. I am now pursuing a career in
+                software engineering. Programming initially started out as a hobby of mine at the beginning of 2020. I
+                started off learning some basic web development on freecodecamp. Soon I became interested in python and
+                read python crash course. This led me to find the website HackerRank that publishes problems online for
+                programming languages. I started completing these problems daily. I am now certified in Python,
+                JavaScript, and Java as well as Problem Solving as described below. Learning so many different coding
+                languages has taught me a lot and has given me the ability to quickly learn new programming languages
+                and apply the theory that I have gathered from doing so many programming problems. At this point I am
+                learning web development on freecodecamp and completing mathematical problems on HackerRank. </p><br><br><br>
+                <h3><<< Use Nav the side to Navigate</h3>
+
+        </div>
+        <div class="tabs" id="Education" onclick="openTab('Education')">
+            <h1>Education</h1>
+            <h2>BSc (Hons) Natural Sciences from The University of Bath</h2>
+            <p>
+                October 2016 - July 2020 <br>
+                Major in Chemistry and Minor in Physics.<br>
+                (2:1 Predicted)<br>
+                Most recently achieved 82% on Programming Skills Module coursework in which I used C<br>
+                (75% overall grade for this module.)<br>
+            </p><br>
+            <h2>A-Levels from John Hampden Grammar School</h2>
+            <p>September 2014-2016
+                A Physics<br>
+                A Maths<br>
+                A Further Maths (AS)<br>
+                B Chemistry<br>
+                C Economics</p>
+
+            <br><h2>HackerRank</h2>
+            <h3>Python Certification</h3>
+            <p>which covers topics like Scalar Types, Operators and Control Flow, Strings, Collections and Iteration, Modularity, Objects and Types and Classes.</p>
+            <br>
+            <br><h3>JavaScript Certification</h3>
+            <p>Which covers topics like, Functions, Currying, Hoisting, Scope, Inheritance,Events and Error Handling.</p>
+            <br>
+            <br><h3>Java Certification</h3>
+            <p>which covers basic topics in Java language such as classes, data structures,inheritance, exception handling, etc. You are expected to be proficient in either Java 7 or Java 8.</p><br>
+            <br><h3>Problem Solving Certification</h3>
+            <p>Which covers topics of Data Structures (such as Arrays, Strings) and Algorithms (such as Sorting and Searching).</p>
+
+        </div>
+        <div class="tabs" id="Projects" onclick="openTab('Projects')">
+            <h1>Projects</h1>
+            <section id="completedProjects" class="projects-section">
+            <h2>Here are some of my projects that I have completed</h2>
+            <div class="projects-grid">
+                <a href="" target="_blank" class="projects-title"></a>
+            </div>
+        
+        </section>
+        </div>
+        
+        
+        <div class="tabs" id="Contact" onclick="openTab('Contact')">
+            <h1>Contact</h1>
+            <p> <a id="profile-link" href="https://github.com/SupremeSadat" target="_blank">github: github.com/SupremeSadat</a><br>
+                linkin: www.linkedin.com/in/sadattafader<br>
+                Email: sadat.tafader@gmail.com
+            </p>
+
+        </div>
+    </main>
+
+    <div id="pseudoBottomBar">
+        <img src="images/git bar.bmp" alt="" id="gitBar">
+        <img src="images/event log.bmp" alt="" id="eventLogo">
+        <div id=bottomBotBar>
+            <img src="images/bottom left logo.bmp" alt="" id="bottomleftlogo">
+            <img src="images/bottom right.bmp" alt="" id="bottomRight">
+        </div>
+    </div>
+
+</body>
+
+</html>
