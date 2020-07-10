@@ -4,11 +4,11 @@
     --pseudoTabHeight:28px;
 
     --pseudoSideBarWidth:23px;
-    --NavWidth:250px;
+    --NavWidth:200px;
 
     --pseudoNavTopHeight:29px;
 }
-
+/* default Settings */
 * {
     margin:0;
     padding:0;
@@ -18,237 +18,325 @@
     color:#bbbbbb;
     background-color:#3c3d41;
 }
-#pseudoNav{
-    color: white;
-    height:var(--pseudoNavHeight);
-    width: 100vw;
+
+/* Cosmetics */
+    /* Top part of the screen. Used to make first 2 strips */
+    #pseudoNav{
+        color: white;
+        height:var(--pseudoNavHeight);
+        width: 100vw;
+        
+    }
+
+        /* First strip on top part of screen. eg File Edit Nav... all the way close */
+        #pseudoNavTop{
+            display: flex;
+            height: var(--pseudoNavTopHeight);
+            border-bottom: 1px solid #333333;
+        }
+            /* Top left File Edit */
+            #pseudoSettings {
+                color: #bbbbbb;
+                display: flex;
+                list-style: none;
+                
+                margin-left: 23px;
+                width:500px;
+            }
+
+            #pseudoSettings u {
+                font-size: 12px;
+            }
+
+            #pseudoSettings li {
+                text-decoration: none;
+                margin-left:12.5px;
+                font-size: 12px;
+                margin-top: 8px;
+            }
+                        /* top right, Close max and min buttons. */
+            #topRight{
+                position: fixed;
+                right:0px;
+                display: flex;
+            }
+            .topRight{
+                height: var(--pseudoNavTopHeight);
+                width: 48px;
+                
+            }
+                    /* Cosmetic Close window button */
+            #exit{
+                opacity: 0.4;
+            }
+            #exit:hover{
+                background-color: red;
+                opacity: 1;
+            }
+            #exit::before, #exit::after {
+                position: fixed;
+                top:calc(var(--pseudoNavTopHeight)*0.5);
+                right:17px;
+                background-color: #ffffff;
+                content: '';
+                height: 1.5px;
+                width: 13px;
+                
+                
+            }
+            #exit::before{
+                transform: rotate(45deg);
+            }
+            #exit::after{
+                transform: rotate(-45deg);
+            }
+                    /* Cosmetic Full screen button */
+            #full::before{
+                position: fixed;
+                top:10px;
+                right:67px;
+                width:8px;
+                height: 8px;
+                border:1.5px solid #ffffff;
+                content: "";
+                opacity: 0.4;
+            }
+            #full:hover{
+                opacity: 1;
+                background-color: #cfcfcf2d;
+            }
+            /* Minimize button */
+            #mini::before{
+                position: fixed;
+                top:15px;
+                right:114px;
+                width:8px;
+                height: 0px;
+                border:1px solid #ffffff;
+                content: "";
+                opacity: 0.4;
+            }
+
+            #mini:hover{
+                opacity: 1;
+                background-color: #cfcfcf2d;
+            }
+        /* Under File, where it says Sadat Tafader. width of screen minus side bar */
+        #pseudoNavBottom{
+            border-color: purple;
+            border-top: 1px solid #515252;
+            border-bottom:1px solid black;
+            height: calc(var(--pseudoNavHeight) - var(--pseudoNavTopHeight))
+            
+        }
+
+            #pseudoNavBottom h1{
+                position: absolute;
+                margin-left: 10px;
+                margin-top: 6px;
+                font-weight: 620;
+                font-size: 12px;
+            }
+            #pseudoNavBottom h2{
+                background-color: #3c3c3c;
+                font-family: 'Courier New', Courier, monospace;
+                color: #636464;
+                position: absolute;
+                margin-left: 88px;
+                margin-top: 7px;
+                font-weight: 400;
+                transform: scale(0.6,2);
+            }
+            #nextName{
+                position: fixed;
+                margin-top: 5px;
+                margin-left: 100px;
+            }
+            .docLogo{
+                width: 15px;
+                
+            }
+
+            #toprightlogo{
+                position: fixed;
+                right:12px;
+                width:350px
+            }
+
+    /* On top of real nav. covers from project to right end of screen include the tab that open. */
+    #pseudoTab{
+        
+        height:var(--pseudoTabHeight);
+        width: calc(100vw - var(var(--pseudoSideBarWidth)));
+        margin-left: var(--pseudoSideBarWidth);
+    }
+
+        #topNav{
+            position: fixed;
+            width: var(--NavWidth);
+            height: var(--pseudoTabHeight);
+            
+            
+        }
+
+        #project{
+            width:80px;
+            margin-left: 10px;
+        }
+        #fileSet{
+            width:110px;
+            position: absolute;
+            right:0px;
+        }
+    /* Side bar */
+    #pseudoSidebar{
+        position: fixed;
+        border-right: 1px solid black;
+        height: calc(100vh - var(--pseudoNavHeight) - var(--pseudoBottomBarHeight));
+        width: var(--pseudoSideBarWidth);
+        top: var(--pseudoNavHeight);
+        writing-mode: sideways-lr;
+        text-orientation: upright;
+        
+        
+    }
+
+        #sideBarImg{
+            position: absolute;
+            top: 0px;
+            height: 238px;
+            width: var(--pseudoSideBarWidth - 1px);
+        }
+        #favorite{
+            height: 89px;
+            margin-bottom: 8px;
+            margin-left: 2px;
+        }
+    /* bottom bar of screen that has git bar and current settings on bottom right. */
+    #pseudoBottomBar{
+        position: fixed;
+        border-top:0.5px solid rgba(0, 0, 0, 0.801);
     
-}
-    
-#pseudoNavTop{
-    display: flex;
-    height: var(--pseudoNavTopHeight);
-    border-bottom: 1px solid #333333;
-}
+        height:var(--pseudoBottomBarHeight);
+        width:100vw;
+        bottom:0px;
+    }
+        #gitBar{
+            position: absolute;
+            width: 310px;
+            left: 26px;
+            top: 1px;
+        }
 
-#pseudoSettings {
-    color: #bbbbbb;
-    display: flex;
-    list-style: none;
-    
-    margin-left: 23px;
-    width:500px;
-}
+        #eventLogo{
+            position: absolute;
+            right:24px;
+            width:68px;
 
-#pseudoSettings u {
-    font-size: 12px;
-}
+        }
+        #bottomleftlogo{
+            position: absolute;
+            bottom: 0px;
+            left:3px;
+            width:17px;
+        }
+        /* The bottom bar is split in 2. This forms the bottom bar. */
+        #bottomBotBar{
+            height: calc(0.5 * var(--pseudoBottomBarHeight));
+            position: absolute;
+            width:100vw;
+            bottom:0px;
+            border-top:1px solid rgba(109, 109, 109, 0.281);
+        }
+        #bottomRight{
+            position: absolute;
+            right:8px;
+            width:315px;
+        }
+    /* The tab that is currently open. */
+    #currentTab{
+        display: flex;
+        position: absolute;
+        left:calc(var(--pseudoSideBarWidth) + var(--NavWidth));
+        width:auto;
+        padding-right: 25px;
+        height: var(--pseudoTabHeight);
+        background-color: #4d5154;
+        border-bottom: 2px solid #5386bd;
+    }
 
-#pseudoSettings li {
-    text-decoration: none;
-    margin-left:12.5px;
-    font-size: 12px;
-    margin-top: 8px;
-}
+        #currentTab:hover{
+            background-color: #343537;
+        }
+        #currentTab>h1{
+            margin-left: 30px;
+            margin-top: 5px;
+            background-color: inherit;
+            font-weight: normal;
+            font-size: 13px;
+        }
 
-#topRight{
-    position: fixed;
-    right:0px;
-    display: flex;
-}
-.topRight{
-    height: var(--pseudoNavTopHeight);
-    width: 48px;
-    
-}
+        /* This is the cross button on the close tab */
+        #closeTab{
+            /* border: 1px solid red; */
+            align-items: center;
+            text-align: center;
+            background-color: inherit;
+            border-radius: 50%;
+            width:13px;
+            height: 13px;
+            position: absolute;
+            right:5px;
+            margin-top: 7px;
+            
+        }
 
-#exit{
-    opacity: 0.4;
-}
-#exit:hover{
-    background-color: red;
-    opacity: 1;
-}
-#exit::before, #exit::after {
-    position: fixed;
-    top:calc(var(--pseudoNavTopHeight)*0.5);
-    right:17px;
-    background-color: #ffffff;
-    content: '';
-    height: 1.5px;
-    width: 13px;
-    
-    
-}
-#exit::before{
-    transform: rotate(45deg);
-}
-#exit::after{
-    transform: rotate(-45deg);
-}
+        #closeTab:hover{
+            background-color: #5b6064;
+        }
 
-#full::before{
-    position: fixed;
-    top:10px;
-    right:67px;
-    width:8px;
-    height: 8px;
-    border:1.5px solid #ffffff;
-    content: "";
-    opacity: 0.4;
-}
-#full:hover{
-    opacity: 1;
-    background-color: #cfcfcf2d;
-}
-
-#mini::before{
-    position: fixed;
-    top:15px;
-    right:114px;
-    width:8px;
-    height: 0px;
-    border:1px solid #ffffff;
-    content: "";
-    opacity: 0.4;
-}
-
-#mini:hover{
-    opacity: 1;
-    background-color: #cfcfcf2d;
-}
-
-#pseudoNavBottom{
-    border-color: purple;
-    border-top: 1px solid #515252;
-    border-bottom:1px solid black;
-    height: calc(var(--pseudoNavHeight) - var(--pseudoNavTopHeight))
-    
-}
-
-#pseudoNavBottom h1{
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 6px;
-    font-weight: 620;
-    font-size: 12px;
-}
-#pseudoNavBottom h2{
-    background-color: #3c3c3c;
-    font-family: 'Courier New', Courier, monospace;
-    color: #636464;
-    position: absolute;
-    margin-left: 88px;
-    margin-top: 7px;
-    font-weight: 400;
-    transform: scale(0.6,2);
-}
-#nextName{
-    position: fixed;
-    margin-top: 5px;
-    margin-left: 100px;
-}
-.docLogo{
-    width: 15px;
-    
-}
-
-#toprightlogo{
-    position: fixed;
-    right:12px;
-    width:350px
-}
+        #closeTab:hover #x:before{
+            background-color: #343537;
+        }
+        #closeTab:hover #x:after{
+            background-color: #343537;
+        }
 
 
-#pseudoTab{
-    
-    height:var(--pseudoTabHeight);
-    width: calc(100vw - var(var(--pseudoSideBarWidth)));
-    margin-left: var(--pseudoSideBarWidth);
-}
+        #x{
+            background-color: transparent;
+            
+            
+        }
+            #x:before, #x:after{
+                position: absolute;
+                content: '';
+                top:2px;
+                left:6px;
+                background-color: #696e71;
+                height: 9px;
+                width: 2px;
+            }
 
-#topNav{
-    position: fixed;
-    width: var(--NavWidth);
-    height: var(--pseudoTabHeight);
-    
-    
-}
+            #x:before{
+                transform: rotate(-45deg);
+            }
 
-#project{
-    width:80px;
-    margin-left: 10px;
-}
-#fileSet{
-    width:110px;
-    position: absolute;
-    right:0px;
-}
+            #x:after{
+                transform: rotate(45deg);
+            }
 
-#pseudoSidebar{
-    position: fixed;
-    border-right: 1px solid black;
-    height: calc(100vh - var(--pseudoNavHeight) - var(--pseudoBottomBarHeight));
-    width: var(--pseudoSideBarWidth);
-    top: var(--pseudoNavHeight);
-    writing-mode: sideways-lr;
-    text-orientation: upright;
-    
-    
-}
+        #currentTab>img{
+            position: absolute;
+            background-color: inherit;
+            width: 16px;
+            top:3px;
+            left:10px;
+            
+        }
 
-#sideBarImg{
-    position: absolute;
-    top: 0px;
-    height: 238px;
-    width: var(--pseudoSideBarWidth - 1px);
-}
-#favorite{
-    height: 89px;
-    margin-bottom: 8px;
-    margin-left: 2px;
-}
 
-#pseudoBottomBar{
-    position: fixed;
-    border-top:0.5px solid rgba(0, 0, 0, 0.801);
-  
-    height:var(--pseudoBottomBarHeight);
-    width:100vw;
-    bottom:0px;
-}
-#gitBar{
-    position: absolute;
-    width: 310px;
-    left: 26px;
-    top: 1px;
-}
-
-#eventLogo{
-    position: absolute;
-    right:24px;
-    width:68px;
-
-}
-#bottomleftlogo{
-    position: absolute;
-    bottom: 0px;
-    left:3px;
-    width:17px;
-}
-#bottomBotBar{
-    height: calc(0.5 * var(--pseudoBottomBarHeight));
-    position: absolute;
-    width:100vw;
-    bottom:0px;
-    border-top:1px solid rgba(109, 109, 109, 0.281);
-}
-#bottomRight{
-    position: absolute;
-    right:8px;
-    width:315px;
-}
-
+/* Real nav bar */
 #navbar{
     position: absolute;
     border:1px solid rgba(146, 146, 146, 0.192);
@@ -283,121 +371,6 @@
     background-position: 15px 0px;
 }
 
-#currentTab{
-    display: flex;
-    position: absolute;
-    left:calc(var(--pseudoSideBarWidth) + var(--NavWidth));
-    z-index: 10;
-    width:auto;
-    padding-right: 25px;
-    height: var(--pseudoTabHeight);
-    background-color: #4d5154;
-    border-bottom: 2px solid #5386bd;
-}
-
-#currentTab:hover{
-    background-color: #343537;
-}
-#currentTab>h1{
-    margin-left: 30px;
-    margin-top: 5px;
-    background-color: inherit;
-    font-weight: normal;
-    font-size: 13px;
-}
-
-
-#closeTab{
-    /* border: 1px solid red; */
-    align-items: center;
-    text-align: center;
-    background-color: inherit;
-    border-radius: 50%;
-    width:13px;
-    height: 13px;
-    position: absolute;
-    right:5px;
-    margin-top: 7px;
-    
-}
-
-#closeTab:hover{
-    background-color: #5b6064;
-}
-
-#closeTab:hover #x:before{
-    background-color: #343537;
-}
-#closeTab:hover #x:after{
-    background-color: #343537;
-}
-
-
-#x{
-    background-color: transparent;
-    
-    
-}
-#x:before, #x:after{
-    position: absolute;
-    content: '';
-    top:2px;
-    left:6px;
-    background-color: #696e71;
-    height: 9px;
-    width: 2px;
-}
-
-#x:before{
-    transform: rotate(-45deg);
-}
-
-#x:after{
-    transform: rotate(45deg);
-}
-
-#currentTab>img{
-    position: absolute;
-    background-color: inherit;
-    width: 16px;
-    top:3px;
-    left:10px;
-    
-}
-
-
-main{
-    position: relative;
-    border:1px solid rgba(201, 201, 201, 0.11);
-    width:calc(100vw - var(--pseudoSideBarWidth) - var(--NavWidth));
-    height:calc(100vh - var(--pseudoNavHeight) - var(--pseudoTabHeight) - var(--pseudoBottomBarHeight));
-    left:calc(var(--pseudoSideBarWidth) + var(--NavWidth));
-    overflow: scroll;
-}
-
-
-main,.tabs,p,.tabs>h1,.tabs>h2,.tabs>h3{
-    background-color:#2b2b2b;
-    font-family: 'Ubuntu Mono', monospace;   
-}
-.tabs>h1{
-    font-size: xx-large;
-    color:orange
-}
-.tabs>h2{
-    font-size: large;
-    color: lightgrey;
-    font-style: italic;
-}
-.tabs>h3{
-    color: green;
-    font-weight:900;
-}
-.tabs{
-    margin: 10px 10px 10px 60px;
-    text-align: justify;
-}
-
 .container{
     width: auto;
     padding-left: 50px;
@@ -413,20 +386,160 @@ main,.tabs,p,.tabs>h1,.tabs>h2,.tabs>h3{
     background-position: 0px 3px;
     
 }
+/* This is the container that contains all links. */
 #TabOptions{
     display: flex;
     flex-direction: column;
+    
 }
 
 .buttons{
-    position:fixed;
-    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    
+    
 }
+
+
 input[type="radio"]:checked + label{
     background-color: rgba(25, 0, 255, 0.164);
     
     
 }
+
+
+main{
+    position: relative;
+    border:1px solid rgba(201, 201, 201, 0.11);
+    width:calc(100vw - var(--pseudoSideBarWidth) - var(--NavWidth));
+    height:calc(100vh - var(--pseudoNavHeight) - var(--pseudoTabHeight) - var(--pseudoBottomBarHeight));
+    left:calc(var(--pseudoSideBarWidth) + var(--NavWidth));
+    overflow: scroll;
+    background-color:#2b2b2b;
+}
+
+    /* tabs holds information*/
+
+    .tabs{
+        margin: 10px 10px 10px 60px;
+        text-align: justify;
+        background-color: inherit;
+    }
+    /* apply settings to all children */
+    .tabs>*{
+        background-color: inherit;
+        font-family: 'Ubuntu Mono', monospace;   
+    }
+
+    .tabs>h1{
+        font-size: xx-large;
+        color:orange;
+        margin-bottom: 10px;
+    }
+    .tabs>h2{
+        font-size: large;
+        color: lightgrey;
+        font-style: italic;
+    }
+    .tabs>h3{
+        font-size: medium;
+        color: rgb(255, 217, 0);
+        font-weight:900;
+    }
+    .tabs>p{
+        font-size: medium;
+    }
+
+
+/* Project */
+        #Projects>*{
+            text-align: center;
+        }
+        #projectPack{
+            display: flex;
+            flex-wrap: wrap;    
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .projectCards{
+            width: 400px;
+            height: 320px;
+            flex-basis: auto;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .projectCards>*{
+            background-color: transparent;
+            font-family: 'Ubuntu mono';
+        }
+
+        .imageContainer{
+            
+            margin: auto;
+            margin-top:20px;
+            margin-bottom: 10px;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+        .projectImg{
+            height: 100%;
+            transition: transform 1s;
+        }
+        .projectImg:hover{
+            transform: scale(1.1);
+            object-fit: cover;
+        }
+
+        .projectCards>h1{
+            margin-top: 10px 10px 10px 10px;
+            font-size: large;
+            font-weight: 600;
+            color: #FFC670;
+            
+        }
+        .projectCards>p{
+            font-size: medium;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: rgb(255, 255, 255);
+        }
+        .projectCards>h1::before{
+            content: "<";
+        }
+
+        .projectCards>h1::after{
+            content: ">";
+            
+        }
+        .projectCards>h1::after,.projectCards>h1::before{
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+
+        .projectCards>h1:hover:before, .projectCards>h1:hover:after{
+            opacity: 1;
+        }
+
+
+/* contacts */
+
+.ContactMe{
+    text-decoration: none;
+    font-size:large;
+    line-height: 30px;
+
+}
+
+
+
+
+
+/* cosmetic */
 #mainside{
     position: fixed;
     width: 50px;
@@ -434,9 +547,97 @@ input[type="radio"]:checked + label{
     border-right:1.5px solid rgb(77, 75, 75);
     height: 100%;
 }
-
-
+/* starts with the other tabs closed */
 #Education, #Projects, #Contact{
     display: none;
+}
+
+@media(max-width: 700px){
+    #pseudoNav, #pseudoTab,#pseudoSidebar,#pseudoBottomBar,#mainside,#navbar>h1,#navHow{
+        display: none;
+    }
+
+    
+    
+    #navbar{
+        z-index: 2;       
+        background-color: transparent;
+        width: 0px;
+        height: 0px;
+        border: transparent;
+    }
+    #navTop::before{
+        position: relative;
+        content:"\25B6";
+        margin-top: 0px;
+        padding-top:0px ;
+        padding-right: 20px;
+        margin-right: 5px;
+        font-size: 11px;
+        background: url("images/file\ logo.bmp")
+        no-repeat 0 0;
+        background-size: 16px;
+        background-position: 15px 0px;
+    }
+    
+    .container{
+        text-align: center;
+        width: 150px;
+        margin: auto;
+        padding: 20px 0px 20px 0px;
+        font-size: large;
+        color:rgb(255, 255, 255);
+        font-weight: 900;
+        
+    }
+    .container::before{
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        margin-right: 0px;
+        content: "";
+        background: none;
+        background-size: 0px;
+        background-position: 0px 0px;
+    }
+
+    #TabOptions{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: stretch;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100vw;
+        height: auto;
+        border-top: 2px solid rgba(255, 145, 0, 0.466);
+    }
+    .buttons{
+        display: none;
+    }
+    input[type="radio"]:checked + label{
+        background-color: rgb(255, 153, 0);
+        
+        
+    }
+
+    main{
+        position: absolute;
+        left: 0px;
+        height: calc(100vh - 50px);
+        width: 100vw;
+        top: 0px;
+        padding: 20px 20px 20px 20px;
+        margin-bottom: 00px;
+        
+    }
+    .tabs{
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    
+    
 }
 

@@ -63,7 +63,6 @@
         <img src="images/sidebar favorite.bmp" alt="" id="favorite">
     </div>
     <nav id="navbar">
-
         <h1 id="navTop">Sadat Tafader</h1>
         <div id="TabOptions">
             <input id="maintab" type="radio" name="tab" onclick="openTab('Main')" class="buttons" checked> <label
@@ -76,6 +75,11 @@
                 for="conttab" class="container">Contact</label>
         </div>
     </nav>
+    
+    
+    
+    
+    
     <main>
         <div id="mainside"></div>
         <div class="tabs" id="Main" onclick="openTab('Main')">
@@ -90,7 +94,7 @@
                 languages has taught me a lot and has given me the ability to quickly learn new programming languages
                 and apply the theory that I have gathered from doing so many programming problems. At this point I am
                 learning web development on freecodecamp and completing mathematical problems on HackerRank. </p><br><br><br>
-                <h3><<< Use Nav the side to Navigate</h3>
+                <h3 id="navHow"><<< Use the files to Navigate</h3>
 
         </div>
         <div class="tabs" id="Education" onclick="openTab('Education')">
@@ -110,8 +114,11 @@
                 A Further Maths (AS)<br>
                 B Chemistry<br>
                 C Economics</p>
-
-            <br><h2>HackerRank</h2>
+            <br>
+            <h2>FreeCodeCamp</h2>
+            <h3>Responsive Web Design Certification</h3>
+            <p>Learnt HTML, CSS and Javascript by completing projects, such as webpages such as this.</p><br>
+            <h2>HackerRank</h2>
             <h3>Python Certification</h3>
             <p>which covers topics like Scalar Types, Operators and Control Flow, Strings, Collections and Iteration, Modularity, Objects and Types and Classes.</p>
             <br>
@@ -126,22 +133,63 @@
         </div>
         <div class="tabs" id="Projects" onclick="openTab('Projects')">
             <h1>Projects</h1>
-            <section id="completedProjects" class="projects-section">
-            <h2>Here are some of my projects that I have completed</h2>
-            <div class="projects-grid">
-                <a href="" target="_blank" class="projects-title"></a>
+            <div id="projectPack">
+                <a class="projectCards" href="https://github.com/SupremeSadat/supremesadat.github.io">
+                    <div class="imageContainer">
+                    <img class="projectImg"  src="Projects/Python_Portfolio.jpg" alt=""></div>
+                    <h1>Python_Portfolio</h1>
+                    <p>This webpage. A python styled responsive portfolio made with HTML,CSS and JavaScript.</p>
+                </a>
+                
+                <a class="projectCards" href="https://codepen.io/SupremeSadat/pen/zYGdYmP">
+                    <div class="imageContainer">
+                    <img class="projectImg"  src="Projects/Survey_form.jpg" alt=""></div>
+                    <h1>Survey_form</h1>
+                    <p>A Survey webpage made with HTML and CSS.</p>
+                </a>
+                
+                <a class="projectCards" href="https://codepen.io/SupremeSadat/pen/rNxJzXV">
+                    <div class="imageContainer">
+                    <img class="projectImg"  src="Projects/Technical_Documentation.jpg" alt=""></div>
+                    <h1>Technical_Documentation</h1>
+                    <p>A responsive webpage that contains some of the basic HTML and CSS I learn from freeCodeCamp.</p>
+                </a>
+                
+                <a href="https://codepen.io/SupremeSadat/pen/VwLbepa" class="projectCards">
+                    <div class="imageContainer">
+                    <img class="projectImg"  src="Projects/Tribute_page.jpg" alt=""></div>
+                    <h1>Tribute_page</h1>
+                    <p>A very basic webpage made from HTML and CSS. One of first ever webpages. Made using HTML and CSS.</p>
+                </a>
+                
+                <a href="https://github.com/SupremeSadat/C-Programming-CW/tree/master/Coursework%201%20(worth%2035%25)" class="projectCards">
+                    <div class="imageContainer">
+                    <img class="projectImg"  src="Projects/Calculating_legrangian_point.jpg" alt=""></div>
+                    <h1>Calculating_lagrangian_point</h1>
+                    <p>A program written in C that calculates the lagrangian point of the earth and moon.</p>
+                </a>
+                
+                <a href="https://github.com/SupremeSadat/C-Programming-CW/tree/master/coursework%202%20(worth%2065%25)" class="projectCards">
+                    <div class="imageContainer">
+                    <img class="projectImg"  src="Projects/Random_Walk.jpg" alt=""></div>
+                    <h1>Random_Walk</h1>
+                    <p>A program written in C that simulates random walks in 1D, 2D and 3D as well as a 1D route per a point in a 1D route.</p>
+                </a>
+                
+            
             </div>
-        
-        </section>
         </div>
         
         
         <div class="tabs" id="Contact" onclick="openTab('Contact')">
             <h1>Contact</h1>
-            <p> <a id="profile-link" href="https://github.com/SupremeSadat" target="_blank">github: github.com/SupremeSadat</a><br>
-                linkin: www.linkedin.com/in/sadattafader<br>
-                Email: sadat.tafader@gmail.com
-            </p>
+            
+             <a id="profile-link" href="https://github.com/SupremeSadat" target="_blank" class="ContactMe">GitHub: github.com/SupremeSadat</a><br>
+             <a id="profile-link" href="https://www.linkedin.com/in/sadattafader/" target="_blank" class="ContactMe"> LinkedIn: www.linkedin.com/in/sadattafader</a><br>
+             <a id="profile-link" href="" target="_blank" class="ContactMe">Email: sadat.tafader@gmail.com</a><br>
+                
+                
+            
 
         </div>
     </main>
