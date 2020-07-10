@@ -584,7 +584,7 @@ main{
         text-align: center;
         width: 150px;
         margin: auto;
-        padding: 20px 0px 20px 0px;
+        padding: 10px 0px 10px 0px;
         font-size: large;
         color:rgb(255, 255, 255);
         font-weight: 900;
@@ -605,12 +605,12 @@ main{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-content: stretch;
+        align-content: space-around;
         position: fixed;
         bottom: 0px;
         left: 0px;
         width: 100vw;
-        height: auto;
+        height: 10vh;
         border-top: 2px solid rgba(255, 145, 0, 0.466);
     }
     .buttons{
@@ -625,11 +625,11 @@ main{
     main{
         position: absolute;
         left: 0px;
-        height: calc(100vh - 50px);
+        height: 90vh;
         width: 100vw;
         top: 0px;
         padding: 20px 20px 20px 20px;
-        margin-bottom: 00px;
+        margin-bottom:0px;
         
     }
     .tabs{
