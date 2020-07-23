@@ -522,9 +522,10 @@ main{
         }
 
 
-        .projectCards>h1:hover:before, .projectCards>h1:hover:after{
+        .projectCards:hover>h1:before, .projectCards:hover>h1:after{
             opacity: 1;
         }
+        
 
 
 /* contacts */
